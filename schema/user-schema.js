@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import autoIncrement from 'mongoose-auto-increment';
 
-const userSchema = mongoose.Schema({
+const contactSchema = mongoose.Schema({
     
 	name:String,
 		email:String,
@@ -10,9 +10,9 @@ const userSchema = mongoose.Schema({
 })
 
 autoIncrement.initialize(mongoose.connection);
-userSchema.plugin(autoIncrement.plugin, 'user');
+contactSchema.plugin(autoIncrement.plugin, 'contact');
 
 
-const user = mongoose.model('user', userSchema);
+const contact = mongoose.model('contact', contactSchema);
 
-export default user;
+export default contact;
